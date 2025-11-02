@@ -1,1 +1,53 @@
-<view class='page' style='padding:24rpx'>页面：customer/list/index</view>
+<view class="page customer-list">
+  <view class="nav-bar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px">
+    <view class="back-area" bindtap="goBack">
+      <view class="back-icon">‹</view>
+    </view>
+    <view class="title">顾客管理</view>
+    <view class="right-area"></view>
+  </view>
+
+  <scroll-view scroll-y class="page-scroll" style="padding-top: {{navBarHeight}}px">
+    <view class="filter card">
+      <view class="filter-title">会员概况</view>
+      <view class="filter-sub">共有 {{filtered.length}} / {{list.length}} 位顾客</view>
+      <view class="search-bar">
+        <input placeholder="搜索姓名或手机号" value="{{keyword}}" bindinput="onKeywordInput" />
+        <view class="search-button" bindtap="clearKeyword" wx:if="{{keyword}}">清除</view>
+      </view>
+    </view>
+
+    <view class="customer-cards">
+      <block wx:if="{{filtered.length}}">
+        <block wx:for="{{filtered}}" wx:key="id">
+          <view class="customer-card card">
+            <view class="customer-header">
+              <view class="avatar">{{item.name.substring(0, 1)}}</view>
+              <view class="info">
+                <view class="name">{{item.name}}</view>
+                <view class="meta">注册于 {{item.registerDate}} · {{item.storeName}}</view>
+              </view>
+              <view class="badge">剩余 {{item.remainTimes || 0}} 次</view>
+            </view>
+            <view class="customer-body">
+              <view class="row">
+                <view class="label">手机号</view>
+                <view class="value">{{item.phone}}</view>
+              </view>
+              <view class="row">
+                <view class="label">累计消费</view>
+                <view class="value highlight">¥{{item.totalSpend || 0}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <view class="empty-state" wx:else>暂无顾客数据</view>
+    </view>
+  </scroll-view>
+
+  <view class="fab" bindtap="goCreate">
+    <view class="plus">＋</view>
+    <view>新增顾客</view>
+  </view>
+</view>

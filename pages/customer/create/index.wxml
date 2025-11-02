@@ -1,1 +1,59 @@
-<view class='page' style='padding:24rpx'>页面：customer/create/index</view>
+<view class="page customer-create">
+  <view class="nav-bar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px">
+    <view class="back-area" bindtap="goBack">
+      <view class="back-icon">‹</view>
+    </view>
+    <view class="title">新增顾客</view>
+    <view class="right-area"></view>
+  </view>
+
+  <scroll-view scroll-y class="page-scroll" style="padding-top: {{navBarHeight}}px">
+    <view class="form">
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">顾客姓名</view>
+          <input class="input-control" placeholder="请输入姓名" value="{{form.name}}" bindinput="onNameInput" />
+        </view>
+        <view class="form-item">
+          <view class="label">联系方式</view>
+          <input class="input-control" type="number" placeholder="请输入手机号" value="{{form.phone}}" bindinput="onPhoneInput" />
+        </view>
+        <view class="form-item">
+          <view class="label">顾客性别</view>
+          <picker mode="selector" range="{{genderOptions}}" value="{{genderIndex}}" bindchange="onGenderChange">
+            <view class="picker-control">{{form.gender || '请选择性别'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">归属门店</view>
+          <picker mode="selector" range="{{storeOptions}}" range-key="name" value="{{storeIndex}}" bindchange="onStoreChange">
+            <view class="picker-control">{{form.storeName || '请选择门店'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">生日</view>
+          <picker mode="date" value="{{form.birthday}}" bindchange="onBirthdayChange">
+            <view class="picker-control">{{form.birthday || '请选择日期'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">客源渠道</view>
+          <picker mode="selector" range="{{sourceOptions}}" value="{{sourceIndex}}" bindchange="onSourceChange">
+            <view class="picker-control">{{form.source}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">备注</view>
+          <textarea class="textarea-control" placeholder="可记录顾客偏好、注意事项" value="{{form.remark}}" bindinput="onRemarkInput"></textarea>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="submit-area">
+    <button class="action-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">保存顾客</button>
+  </view>
+</view>

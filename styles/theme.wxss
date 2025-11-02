@@ -1,1 +1,218 @@
-page{--bg-page:#FBF6F1;--gold:#CDA46A;--gold-grad:linear-gradient(135deg,#D8B980 0%,#CDA46A 100%);--shadow-card:0 8rpx 28rpx rgba(0,0,0,.06);}
+page {
+  --bg-page: #fbf6f1;
+  --bg-card: #ffffff;
+  --bg-muted: #f3ede5;
+  --color-primary: #cda46a;
+  --color-primary-dark: #b4894d;
+  --color-success: #3bb273;
+  --color-text: #1f1f1f;
+  --color-subtle: #6f6f6f;
+  --shadow-card: 0 12rpx 40rpx rgba(205, 164, 106, 0.18);
+  --radius-lg: 32rpx;
+  --radius-md: 24rpx;
+  --radius-sm: 16rpx;
+  --font-title: 40rpx;
+  --font-subtitle: 28rpx;
+  --font-text: 26rpx;
+}
+
+.page {
+  background: var(--bg-page);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.nav-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  padding: 0 32rpx;
+  color: #fff;
+  background: linear-gradient(135deg, #d8b980 0%, #cda46a 55%, #b4894d 100%);
+  box-shadow: 0 4rpx 18rpx rgba(205, 164, 106, 0.35);
+}
+
+.nav-bar .back-area {
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 36rpx;
+}
+
+.nav-bar .back-icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid rgba(255, 255, 255, 0.65);
+}
+
+.nav-bar .title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+}
+
+.nav-bar .right-area {
+  width: 80rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 16rpx;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6rpx 16rpx;
+  border-radius: 999rpx;
+  background: rgba(205, 164, 106, 0.12);
+  color: var(--color-primary);
+  font-size: 22rpx;
+}
+
+.action-button {
+  background: linear-gradient(135deg, #d8b980 0%, #cda46a 100%);
+  color: #fff;
+  border-radius: 999rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 600;
+  box-shadow: 0 12rpx 24rpx rgba(205, 164, 106, 0.35);
+}
+
+.fab {
+  position: fixed;
+  right: 48rpx;
+  bottom: 80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d8b980 0%, #cda46a 100%);
+  box-shadow: 0 20rpx 40rpx rgba(205, 164, 106, 0.45);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.fab .plus {
+  font-size: 56rpx;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  padding: 12rpx 20rpx;
+  border-radius: 999rpx;
+  box-shadow: 0 8rpx 30rpx rgba(31, 31, 31, 0.06);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  font-size: 26rpx;
+  color: var(--color-text);
+}
+
+.search-button {
+  margin-left: 16rpx;
+  padding: 12rpx 32rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #d8b980 0%, #cda46a 100%);
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.empty-state {
+  padding: 120rpx 40rpx;
+  text-align: center;
+  color: var(--color-subtle);
+  font-size: 26rpx;
+}
+
+.form {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.form-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  box-shadow: var(--shadow-card);
+}
+
+.form-item {
+  margin-bottom: 24rpx;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.form-item .label {
+  font-size: 26rpx;
+  color: var(--color-subtle);
+  margin-bottom: 12rpx;
+}
+
+.input-control,
+.picker-control {
+  background: var(--bg-muted);
+  border-radius: var(--radius-md);
+  padding: 22rpx 28rpx;
+  font-size: 28rpx;
+  color: var(--color-text);
+}
+
+.textarea-control {
+  background: var(--bg-muted);
+  border-radius: var(--radius-md);
+  padding: 24rpx 28rpx;
+  font-size: 28rpx;
+  color: var(--color-text);
+  min-height: 160rpx;
+}
+
+.placeholder {
+  color: rgba(31, 31, 31, 0.35);
+}
+
+.section-subtitle {
+  font-size: 24rpx;
+  color: var(--color-subtle);
+  margin-top: 8rpx;
+}
