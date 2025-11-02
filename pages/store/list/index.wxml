@@ -1,1 +1,47 @@
-<view class='page' style='padding:24rpx'>页面：store/list/index</view>
+<view class="page store-list">
+  <view class="nav-bar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px">
+    <view class="back-area" bindtap="goBack">
+      <view class="back-icon">‹</view>
+    </view>
+    <view class="title">门店管理</view>
+    <view class="right-area"></view>
+  </view>
+
+  <scroll-view scroll-y class="page-scroll" style="padding-top: {{navBarHeight}}px">
+    <view class="filter card">
+      <view class="filter-title">门店概览</view>
+      <view class="filter-sub">已载入 {{filtered.length}} / {{list.length}} 家门店</view>
+      <view class="search-bar">
+        <input placeholder="搜索门店或店长" value="{{keyword}}" bindinput="onKeywordInput" />
+        <view class="search-button" bindtap="clearKeyword" wx:if="{{keyword}}">清除</view>
+      </view>
+    </view>
+
+    <view class="store-cards">
+      <block wx:if="{{filtered.length}}">
+        <block wx:for="{{filtered}}" wx:key="id">
+          <view class="store-card card">
+            <view class="store-header">
+              <view class="store-name">{{item.name}}</view>
+              <view class="badge">顾客 {{item.customerCount || 0}}</view>
+            </view>
+            <view class="store-row">
+              <view class="label">店长</view>
+              <view class="value">{{item.manager}} · {{item.phone}}</view>
+            </view>
+            <view class="store-row">
+              <view class="label">地址</view>
+              <view class="value">{{item.address}}</view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <view class="empty-state" wx:else>暂无符合条件的门店</view>
+    </view>
+  </scroll-view>
+
+  <view class="fab" bindtap="goCreate">
+    <view class="plus">＋</view>
+    <view>新建门店</view>
+  </view>
+</view>

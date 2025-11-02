@@ -1,1 +1,61 @@
-<view class='page' style='padding:24rpx'>页面：consume/create/index</view>
+<view class="page consume-create">
+  <view class="nav-bar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px">
+    <view class="back-area" bindtap="goBack">
+      <view class="back-icon">‹</view>
+    </view>
+    <view class="title">登记项目消耗</view>
+    <view class="right-area"></view>
+  </view>
+
+  <scroll-view scroll-y class="page-scroll" style="padding-top: {{navBarHeight}}px">
+    <view class="form">
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">归属门店</view>
+          <picker mode="selector" range="{{storeOptions}}" range-key="name" value="{{storeIndex}}" bindchange="onStoreChange">
+            <view class="picker-control">{{form.storeName || '请选择门店'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">到店顾客</view>
+          <picker mode="selector" range="{{customerOptions}}" range-key="name" value="{{customerIndex}}" bindchange="onCustomerChange">
+            <view class="picker-control">{{form.customerName || '请选择顾客'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">消耗项目</view>
+          <picker mode="selector" range="{{serviceOptions}}" range-key="name" value="{{serviceIndex}}" bindchange="onServiceChange">
+            <view class="picker-control">{{form.serviceName || '请选择项目'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">服务人员</view>
+          <picker mode="selector" range="{{staffOptions}}" range-key="name" value="{{staffIndex}}" bindchange="onStaffChange">
+            <view class="picker-control">{{form.staffName || '请选择人员'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <view class="label">消耗次数</view>
+          <input class="input-control" type="number" placeholder="请输入次数" value="{{form.times}}" bindinput="onTimesChange" />
+        </view>
+        <view class="form-item">
+          <view class="label">核销日期</view>
+          <picker mode="date" value="{{form.date}}" bindchange="onDateChange">
+            <view class="picker-control">{{form.date || '请选择日期'}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">备注</view>
+          <textarea class="textarea-control" placeholder="记录顾客体验反馈、注意事项" value="{{form.remark}}" bindinput="onRemarkInput"></textarea>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="submit-area">
+    <button class="action-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">确认登记</button>
+  </view>
+</view>

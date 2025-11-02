@@ -1,1 +1,22 @@
+.consume-create {
+  padding-bottom: 180rpx;
+}
 
+.consume-create .page-scroll {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 32rpx 48rpx 200rpx;
+}
+
+.submit-area {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24rpx 48rpx 48rpx;
+  background: linear-gradient(180deg, rgba(251, 246, 241, 0) 0%, #fbf6f1 65%);
+}
+
+.submit-area .action-button::after {
+  border: none;
+}

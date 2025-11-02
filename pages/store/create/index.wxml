@@ -1,1 +1,43 @@
-<view class='page' style='padding:24rpx'>页面：store/create/index</view>
+<view class="page store-create">
+  <view class="nav-bar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px">
+    <view class="back-area" bindtap="goBack">
+      <view class="back-icon">‹</view>
+    </view>
+    <view class="title">新建门店</view>
+    <view class="right-area"></view>
+  </view>
+
+  <scroll-view scroll-y class="page-scroll" style="padding-top: {{navBarHeight}}px">
+    <view class="form">
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">门店名称</view>
+          <input class="input-control" placeholder="请输入门店全称" value="{{form.name}}" bindinput="onNameInput" />
+        </view>
+        <view class="form-item">
+          <view class="label">店长姓名</view>
+          <input class="input-control" placeholder="请输入店长姓名" value="{{form.manager}}" bindinput="onManagerInput" />
+        </view>
+        <view class="form-item">
+          <view class="label">联系电话</view>
+          <input class="input-control" type="number" placeholder="请输入联系方式" value="{{form.phone}}" bindinput="onPhoneInput" />
+        </view>
+        <view class="form-item">
+          <view class="label">详细地址</view>
+          <textarea class="textarea-control" placeholder="请输入门店详细地址" value="{{form.address}}" bindinput="onAddressInput"></textarea>
+        </view>
+      </view>
+
+      <view class="form-section">
+        <view class="form-item">
+          <view class="label">备注信息</view>
+          <textarea class="textarea-control" placeholder="可填写门店特色、营业时间等" value="{{form.remark}}" bindinput="onRemarkInput"></textarea>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="submit-area">
+    <button class="action-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">保存门店</button>
+  </view>
+</view>

@@ -1,1 +1,100 @@
+.customer-list {
+  padding-bottom: 160rpx;
+}
 
+.customer-list .page-scroll {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 32rpx 48rpx 200rpx;
+}
+
+.filter {
+  padding: 36rpx 32rpx;
+  margin-bottom: 36rpx;
+}
+
+.filter-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.filter-sub {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--color-subtle);
+}
+
+.customer-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.customer-card {
+  padding: 36rpx 32rpx;
+}
+
+.customer-header {
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+  margin-bottom: 28rpx;
+}
+
+.customer-header .avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f6c9d4 0%, #d89bc4 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.customer-header .info {
+  flex: 1;
+}
+
+.customer-header .name {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.customer-header .meta {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--color-subtle);
+}
+
+.customer-body .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+  font-size: 26rpx;
+  color: var(--color-subtle);
+}
+
+.customer-body .row:last-child {
+  margin-bottom: 0;
+}
+
+.customer-body .label {
+  width: 160rpx;
+  color: rgba(31, 31, 31, 0.55);
+}
+
+.customer-body .value {
+  flex: 1;
+  text-align: right;
+  color: var(--color-text);
+}
+
+.customer-body .value.highlight {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
