@@ -1,0 +1,39 @@
+<view class="page consume-record-page">
+  <block wx:if="{{loading && records.length === 0}}">
+    <view class="skeleton-list">
+      <block wx:for="{{skeletons}}" wx:key="*this">
+        <view class="skeleton-card">
+          <view class="skeleton-line skeleton-title"></view>
+          <view class="skeleton-line"></view>
+          <view class="skeleton-line skeleton-meta"></view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <view wx:elif="{{!loading && records.length === 0}}" class="empty-state">
+    <view class="empty-icon">🍃</view>
+    <view class="empty-text">暂无消费记录</view>
+  </view>
+
+  <block wx:else>
+    <view class="record-list">
+      <block wx:for="{{records}}" wx:key="index">
+        <view class="record-card">
+          <view class="record-header">
+            <text class="record-store">{{item.storeName}}</text>
+            <text class="record-amount">{{item.displayAmount}}</text>
+          </view>
+          <view class="record-meta">
+            <text class="record-customer">{{item.customerName}}</text>
+            <text class="record-time">{{item.displayTime}}</text>
+          </view>
+          <view wx:if="{{item.serviceName}}" class="record-service">{{item.serviceName}}</view>
+          <view wx:if="{{item.serviceSubName}}" class="record-service-sub">{{item.serviceSubName}}</view>
+        </view>
+      </block>
+      <view wx:if="{{loading}}" class="loading-more">加载中...</view>
+      <view wx:elif="{{!hasMore}}" class="no-more">没有更多了</view>
+    </view>
+  </block>
+</view>
