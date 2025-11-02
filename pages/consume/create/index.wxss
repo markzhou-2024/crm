@@ -1,1 +1,4 @@
-
+.result {
+  margin-top: 24rpx;
+  color: #666;
+}
