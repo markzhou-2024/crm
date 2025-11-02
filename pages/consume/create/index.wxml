@@ -1,1 +1,4 @@
-<view class='page' style='padding:24rpx'>页面：consume/create/index</view>
+<view class="page" style="padding:24rpx">
+  <button bindtap="handleSubmit" type="primary" loading="{{submitting}}">提交消费记录</button>
+  <view wx:if="{{lastConsumeId}}" class="result">最新消费 ID：{{lastConsumeId}}</view>
+</view>
