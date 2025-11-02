@@ -1,0 +1,1 @@
+page{--bg-page:#FBF6F1;--gold:#CDA46A;--gold-grad:linear-gradient(135deg,#D8B980 0%,#CDA46A 100%);--shadow-card:0 8rpx 28rpx rgba(0,0,0,.06);}

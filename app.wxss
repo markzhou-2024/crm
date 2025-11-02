@@ -1,0 +1,2 @@
+@import "styles/theme.wxss";
+.page{background:var(--bg-page);min-height:100vh}

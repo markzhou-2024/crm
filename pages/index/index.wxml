@@ -1,0 +1,1 @@
+<view class="page" style="padding:24rpx"><view>首页</view><button bindtap="go" data-url="/pages/store/list/index">门店管理</button></view>

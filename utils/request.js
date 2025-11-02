@@ -1,0 +1,1 @@
+export function call(name,data={},loading=true){if(loading)wx.showLoading({title:'加载中',mask:true});return wx.cloud.callFunction({name,data}).then(res=>res.result).finally(()=>loading&&wx.hideLoading())}

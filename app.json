@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/store/list/index",
+    "pages/store/create/index",
+    "pages/customer/list/index",
+    "pages/customer/create/index",
+    "pages/purchase/list/index",
+    "pages/purchase/create/index",
+    "pages/consume/list/index",
+    "pages/consume/create/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "美业CRM",
+    "navigationStyle": "custom",
+    "backgroundColor": "#FBF6F1",
+    "enablePullDownRefresh": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

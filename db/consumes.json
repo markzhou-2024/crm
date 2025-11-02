@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "co1",
+    "customer_id": "c1",
+    "service_id": "sv1",
+    "staff_id": "st1",
+    "store_id": "s1",
+    "times": 1,
+    "consume_at": "2025-10-28T14:30:00Z",
+    "month": "2025-10"
+  }
+]

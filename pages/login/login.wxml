@@ -1,0 +1,1 @@
+<view class="page" style="padding:48rpx"><button bindtap="onLogin">使用测试账号登录</button></view>
