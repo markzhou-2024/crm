@@ -1,1 +1,4 @@
-import {call} from '../utils/request';export const fetchPurchases=p=>call('purchase_list',p);export const createPurchase=b=>call('purchase_create',b);
+import { call } from '../utils/request';
+
+export const fetchPurchases = (params) => call('purchase_list', params);
+export const createPurchase = (payload) => call('purchase_create', payload);
