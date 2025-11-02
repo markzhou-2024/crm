@@ -1,9 +1,0 @@
-/* 全局主题：白底、香槟金、柔和阴影、圆角 */
-.page { padding: 24rpx; background: #FAFAFA; min-height: 100vh; }
-.card { background:#fff; border-radius: 24rpx; box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.06); padding: 24rpx; }
-.title { font-size: 34rpx; font-weight: 600; margin-bottom: 16rpx; }
-.muted { color: #6B7280; }
-.btn { height: 88rpx; border-radius: 16rpx; display:flex; align-items:center; justify-content:center; }
-.btn-primary { background:#CDA46A; color:#fff; }
-.grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 24rpx; }
-.kpi { display:flex; justify-content:space-between; align-items:center; }

@@ -1,0 +1,6 @@
+/* 主题变量 */
+:root {
+  --gold: #CDA46A;
+  --card-radius: 24rpx;
+  --shadow: 0 8rpx 24rpx rgba(0,0,0,0.06);
+}

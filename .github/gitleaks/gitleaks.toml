@@ -1,0 +1,7 @@
+# Gitleaks config (minimal)
+[allowlist]
+ description = "Allow common false positives"
+ regexes = [
+   'BEGIN RSA PRIVATE KEY',
+   'END RSA PRIVATE KEY'
+ ]

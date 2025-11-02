@@ -1,0 +1,28 @@
+name: CI
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ chore/refactor-and-fixes/** ]
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install deps
+        run: |
+          npm i --no-audit --no-fund || true
+      - name: Lint
+        run: npm run lint || true
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: gitleaks
+        uses: zricethezav/gitleaks-action@v2.3.6
+        with:
+          config-path: .github/gitleaks/gitleaks.toml
+          fail: true
