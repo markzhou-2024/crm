@@ -1,22 +1,25 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/index/index",
-    "pages/store/list/index",
-    "pages/store/create/index",
+    "pages/home/index",
     "pages/customer/list/index",
-    "pages/customer/create/index",
     "pages/purchase/list/index",
-    "pages/purchase/create/index",
-    "pages/consume/list/index",
-    "pages/consume/create/index"
+    "pages/usage/list/index"
   ],
   "window": {
     "navigationBarTitleText": "美业CRM",
-    "navigationStyle": "custom",
-    "backgroundColor": "#FBF6F1",
-    "enablePullDownRefresh": true
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#CDA46A",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页" },
+      { "pagePath": "pages/customer/list/index", "text": "客户" },
+      { "pagePath": "pages/purchase/list/index", "text": "购买" },
+      { "pagePath": "pages/usage/list/index", "text": "消耗" }
+    ]
+  }
 }

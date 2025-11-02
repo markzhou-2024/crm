@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="card">
+    <view class="title">概览</view>
+    <view class="kpi muted">
+      <text>门店数：{{storeCount}}</text>
+      <text>客户数：{{customerCount}}</text>
+    </view>
+  </view>
+  <view class="card" style="margin-top:24rpx">
+    <view class="title">功能</view>
+    <view class="grid">
+      <navigator url="/pages/store/list/index" class="btn btn-primary">门店管理</navigator>
+      <navigator url="/pages/product/list/index" class="btn btn-primary">产品管理</navigator>
+      <navigator url="/pages/purchase/list/index" class="btn btn-primary">购买记录</navigator>
+      <navigator url="/pages/usage/list/index" class="btn btn-primary">消耗记录</navigator>
+    </view>
+  </view>
+</view>
